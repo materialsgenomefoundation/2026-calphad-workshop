@@ -1,17 +1,16 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "waitFor": "onCreateCommand",
-  "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
-  "customizations": {
-    "codespaces": {
-      "openFiles": []
+    "image": "mcr.microsoft.com/devcontainers/python:3.13",
+
+    "features": {
+        "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
     },
-    "vscode": {
-      "extensions": [
-        "ms-toolsai.jupyter",
-        "ms-python.python"
-      ]
-    }
-  }
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "postCreateCommand": "uv sync --group dev"
 }
