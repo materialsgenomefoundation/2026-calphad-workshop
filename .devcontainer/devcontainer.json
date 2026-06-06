@@ -12,5 +12,5 @@
             ]
         }
     },
-    "postCreateCommand": "uv sync --group dev"
+    "postCreateCommand": "uv sync"
 }
