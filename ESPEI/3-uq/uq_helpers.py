@@ -17,7 +17,7 @@ def _highest_density_indices(flat_lnprob, credible_interval=0.95):
     ArrayLike[np.int_]
         1D array of indices in the credible interval
     """
-    cutoff_probability = np.quantile(flat_lnprob, 1-credible_interval, interpolation='lower')
+    cutoff_probability = np.quantile(flat_lnprob, 1-credible_interval, method='lower')
     return np.nonzero(flat_lnprob > cutoff_probability)[0]
 
 
